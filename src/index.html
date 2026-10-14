@@ -81,9 +81,6 @@ details.all li span:first-child{color:var(--muted)}
 .foot .ck{font-family:var(--f-mono);font-size:11.5px;color:var(--muted)}
 .foot .ck.stale{color:var(--warn)}
 .foot button{all:unset;cursor:pointer;font-size:12.5px;color:var(--accent)}
-form.rep{display:grid;gap:6px}
-form.rep textarea{width:100%;min-height:64px;resize:vertical}
-form.rep .row{display:flex;gap:8px;justify-content:flex-end}
 .btn{font:600 13px var(--f-body);border:1px solid var(--accent);background:var(--accent);color:var(--bg);border-radius:8px;padding:6px 12px;cursor:pointer}
 .btn.ghost{background:transparent;color:var(--accent)}
 .empty{padding:28px;text-align:center;color:var(--muted);border:1px dashed var(--rule);border-radius:10px}
@@ -134,6 +131,7 @@ footer a{color:var(--muted)}
   <h1>Creative Tech Funding Finder</h1>
   <p>AHRC, Innovate UK and UKRI routes for creative AI and creative technology. Say who you are and each call shows the role you can take on it: lead, co-lead, named team member or partner. Then narrow by purpose, size, deadline and facilities.</p>
   <div class="fresh" id="fresh"><span><span class="dot"></span>Loading the latest data…</span></div>
+  <p class="note" id="weekly" style="margin-top:8px">This list is checked once a week, on Mondays, so changes a funder has made in the last few days may not show here yet. Always confirm the details on the funder's own page before you apply.<span id="contactline"></span></p>
   <div class="snapnote" id="snapnote" hidden></div>
   <div class="dl" id="dlbar" hidden><span class="lab">Take a copy</span>
     <button type="button" class="btn ghost" id="dlHtml">Download snapshot (HTML)</button>
@@ -204,12 +202,11 @@ footer a{color:var(--muted)}
   <div class="upd">
     <section><h3>How this page stays current</h3><ol>
       <li>The calls live in data files in the site's GitHub repository. GitHub rebuilds the page whenever they change, and the host publishes the result.</li>
-      <li>Every Monday an automated check re-reads each call's funder page and UKRI's new-opportunities feed. It proposes date changes and new calls for a person to approve.</li>
+      <li>Every Monday an automated check re-reads each call's funder page and UKRI's new-opportunities feed. It proposes date changes and new calls for a person to approve. Changes a funder makes between Mondays won't show until the next check.</li>
       <li>Each card shows when it was last checked. Anything not checked for 30 days is flagged.</li>
-      <li>Anyone viewing can report a change from any card, as a GitHub issue or by email.</li>
     </ol><p class="note" style="margin-top:10px">Always confirm on the funder's own page before you bid.</p></section>
     <section><h3>Change log</h3><ul class="rlist" id="log"><li class="note">Loading…</li></ul></section>
-    <section><h3>Reporting a change</h3><p class="note">Use "Report a change" on any card. Reports are checked against the funder's page before anything changes. </p></section>
+    <section><h3>Reporting an issue</h3><p class="note">Email the maintainer (address in the footer). Anything reported is checked against the funder's own page before the list changes.</p></section>
   </div>
 </section>
 
@@ -235,8 +232,7 @@ let S={schemes:[],personas:[],gaps:[],projects:[],status:null,reports:[]};
 let st={who:'',purpose:new Set(),funder:new Set(),size:new Set(),when:new Set(),fac:new Set(),q:'',hideNo:true,closed:false,topic:''};
 try{const v=JSON.parse(localStorage.getItem('finder')||'{}');if(v.who)st.who=v.who;(v.fac||[]).forEach(f=>st.fac.add(f));}catch(e){}
 const save=()=>{try{localStorage.setItem('finder',JSON.stringify({who:st.who,fac:[...st.fac]}))}catch(e){}};
-let CAN_REPORT=false;
-let CONFIG={contactName:'Rob Crow',repo:'',reportEmail:'',siteUrl:''};
+let CONFIG={contactName:'Rob Crow',repo:'',contactEmail:'',siteUrl:''};
 let CONTACT_NAME='Rob Crow';
 
 function chipRow(el,items,set,cb){
@@ -300,26 +296,9 @@ function renderRoutes(){
       <div class="amt">${esc(s.amt)}</div>${role}
       <p class="note">${esc(s.note)}</p><div class="fit">Fits: ${esc(fit)}</div>
       <details class="all"><summary>${st.who?'Roles for everyone else':'Who can take part'}</summary><ul>${all}</ul></details>
-      <div class="foot"><span class="ck ${age>30?'stale':''}">${age>30?'Not checked for '+age+' days':'Checked '+new Date(s.checked).toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'})}</span>
-      ${CAN_REPORT?`<button type="button" data-rep="${esc(s.id)}">Report a change</button>`:''}</div>
-      <div data-form="${esc(s.id)}"></div></article>`}).join('')
+      <div class="foot"><span class="ck ${age>30?'stale':''}">${age>30?'Not checked for '+age+' days':'Checked '+new Date(s.checked).toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'})}</span></div></article>`}).join('')
     :'<div class="empty">No routes match. Try removing a filter, ticking "Include closed", or choosing "Show everyone".</div>';
 }
-$('grid').addEventListener('click',e=>{
-  const b=e.target.closest('[data-rep]');if(b){const id=b.dataset.rep,box=document.querySelector(`[data-form="${CSS.escape(id)}"]`);
-    box.innerHTML=`<form class="rep" data-id="${esc(id)}"><label for="t-${esc(id)}" class="note">What has changed? Include a link to the funder's page if you can.</label><textarea id="t-${esc(id)}" maxlength="800" required></textarea><div class="row">${CONFIG.reportEmail?'<button class="btn" type="submit" data-via="email">Email the maintainer</button>':''}<button class="btn ghost" type="submit" data-via="copy">Copy text</button><button type="button" class="btn ghost" data-cancel>Cancel</button></div><p class="note" data-hint></p></form>`;
-    box.querySelector('textarea').focus();return;}
-  if(e.target.closest('[data-cancel]')) e.target.closest('[data-form]').innerHTML='';
-});
-$('grid').addEventListener('submit',async e=>{
-  e.preventDefault();const f=e.target,id=f.dataset.id,txt=f.querySelector('textarea').value.trim();
-  const hint=f.querySelector('[data-hint]');if(!txt){hint.textContent='Please describe the change first.';return;}
-  const sc=S.schemes.find(x=>x.id===id)||{n:id,u:''};
-  const title=`Report: ${sc.n}`, body=`Scheme: ${sc.n} (${id})\nSource page: ${sc.u}\n\nWhat has changed:\n${txt.slice(0,800)}`;
-  const via=e.submitter?.dataset.via||'copy';
-  if(via==='email'){location.href=`mailto:${CONFIG.reportEmail}?subject=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`;hint.textContent='Your email app should open. If it doesn\'t, copy the text and email '+CONFIG.reportEmail+'.';}
-  else{try{await navigator.clipboard.writeText(title+'\n\n'+body);hint.textContent='Copied. Paste it into an email to '+(CONFIG.reportEmail||CONTACT_NAME)+'.';}catch(err){f.querySelector('textarea').select();hint.textContent='Select the text above and copy it.';}}
-});
 function renderGaps(){
   $('ws').innerHTML=[...S.gaps].sort((a,b)=>a.order-b.order).map(g=>{const on=!st.fac.size||(g.fac||[]).some(f=>st.fac.has(f));
     return `<div class="wsrow ${on?'':'dim'}"><div class="heat ${esc(g.h)}">${esc(g.h)}</div><div style="display:grid;gap:6px;min-width:0"><h3>${esc(g.t)}</h3><p class="ev">${esc(g.ev)}</p><p><b>Starter idea:</b> ${esc(g.idea)}</p><p class="fit">Facilities: ${(g.fac||[]).map(f=>esc(FACN[f]||f)).join(', ')} · First scheme: ${esc(g.s)}</p></div></div>`}).join('')||'<div class="empty">No ideas loaded yet.</div>';
@@ -350,7 +329,7 @@ document.querySelector('.tabs').addEventListener('click',e=>{const t=e.target.cl
   document.querySelectorAll('[role=tabpanel]').forEach(p=>p.hidden=p.id!==t.getAttribute('aria-controls'));});
 
 const SNAP_SOURCES='Sources: UKRI (ukri.org), the Innovation Funding Service, Innovate UK Business Connect and Gateway to Research. Anything from elsewhere is labelled. Deadlines and eligibility change, so confirm on the funder\'s own page before bidding.';
-let CONTACT='Contact Rob Crow for info.';
+
 const SNAP=window.__SNAP||null;
 const BUILT=window.__DATA||null;
 let LIVE_URL=SNAP?SNAP.live:(location.protocol.startsWith('http')?location.origin+location.pathname:'');
@@ -374,8 +353,7 @@ function buildSnapshot(){
   const lc=S.status&&S.status.lastChecked?new Date(S.status.lastChecked).toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'}):'unknown';
   const sv=new Date(saved).toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});
   const n=wrap.querySelector('#snapnote');n.hidden=false;
-  n.innerHTML=`<b>Snapshot saved ${esc(sv)}</b> from the Creative Tech Funding Finder. Data last checked ${esc(lc)}. This copy does not update itself. ${esc(SNAP_SOURCES)}${LIVE_URL?` Live version: <a href="${esc(LIVE_URL)}">${esc(LIVE_URL)}</a>.`:''} <b>${esc(CONTACT)}</b>`;
-  const foot=wrap.querySelector('footer');foot.insertAdjacentHTML('beforeend',` ${esc(CONTACT)}`);
+  n.innerHTML=`<b>Snapshot saved ${esc(sv)}</b> from the Creative Tech Funding Finder. Data last checked ${esc(lc)}. This copy does not update itself. ${esc(SNAP_SOURCES)}${LIVE_URL?` Live version: <a href="${esc(LIVE_URL)}">${esc(LIVE_URL)}</a>.`:''} <b>To report issues, contact ${esc(CONFIG.contactEmail||CONTACT_NAME)}.</b>`;
   const font=document.querySelector('link[rel=stylesheet]')?.outerHTML||'';
   const css=document.querySelector('style').outerHTML;
   const app=document.getElementById('app').textContent;
@@ -402,9 +380,11 @@ buildFilters();
       const [a,b,c,d,e,f]=await Promise.all(['schemes','personas','gaps','projects','status','config'].map(get));
       Object.assign(S,{schemes:a.schemes,personas:b.personas,gaps:c.gaps,projects:d.rows||[],status:e});CONFIG=Object.assign(CONFIG,f);
     }
-    CONTACT_NAME=CONFIG.contactName||'Rob Crow';CONTACT=`Contact ${CONTACT_NAME} for info.`;
-    if(!SNAP){if(CONFIG.siteUrl)LIVE_URL=CONFIG.siteUrl;CAN_REPORT=!!CONFIG.reportEmail;$('dlbar').hidden=false;}
-    $('maint').textContent=`Maintained by ${CONTACT_NAME}.`;
+    CONTACT_NAME=CONFIG.contactName||'Rob Crow';
+    if(!SNAP){if(CONFIG.siteUrl)LIVE_URL=CONFIG.siteUrl;$('dlbar').hidden=false;}
+    const mail=CONFIG.contactEmail?`<a href="mailto:${esc(CONFIG.contactEmail)}">${esc(CONFIG.contactEmail)}</a>`:esc(CONTACT_NAME);
+    $('maint').innerHTML=`Maintained by ${esc(CONTACT_NAME)}. To report issues, contact ${mail}.`;
+    $('contactline').innerHTML=` To report issues, contact ${mail}.`;
   }catch(err){$('grid').innerHTML='<div class="empty">The funding data could not be loaded. Refresh the page, or try again later.</div>';$('fresh').innerHTML='<span><span class="dot stale"></span>Data unavailable</span>';return;}
   renderWho();renderRoutes();renderGaps();renderBars();renderAwards();renderStatus();
 })();

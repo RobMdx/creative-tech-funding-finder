@@ -77,7 +77,7 @@ def main() -> int:
             errs.append(f"projects.json rows[{j}]: expected 9 columns")
             break
 
-    for k in ("contactName", "repo", "reportEmail", "siteUrl"):
+    for k in ("contactName", "contactEmail", "repo", "siteUrl"):
         if k not in config:
             errs.append(f"config.json: missing '{k}'")
     if config.get("repo") and not re.match(r"^[\w.-]+/[\w.-]+$", config["repo"]):

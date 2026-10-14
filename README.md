@@ -45,13 +45,13 @@ New calls, AI drafts and anything uncertain never go live without a person mergi
 {
  "contactName": "Rob Crow",
  "repo": "<your-github-username>/creative-tech-funding-finder",
- "reportEmail": "",
+ "contactEmail": "",
  "siteUrl": "https://<your-site-name>.netlify.app"
 }
 ```
 
 - `repo` names this GitHub repository. Visitors can no longer report changes through GitHub issues (removed 14 Oct 2026, so that free text from the public never reaches the weekly review).
-- `reportEmail` turns on the **Report a change** button, which offers **Email the maintainer** and **Copy text**. That address is public on the site.
+- `contactEmail` is shown in the header and footer as "To report issues, contact …". It is public on the site. There is no reporting form or button (removed 14 Oct 2026); people email instead.
 - You can fill in `siteUrl` after step 4.
 
 ### 2. Put the folder on GitHub
@@ -74,7 +74,7 @@ git push -u origin main
 ### 3. Repository settings
 
 - **Settings → Actions → General → Workflow permissions**: choose **Read and write permissions** and tick **Allow GitHub Actions to create and approve pull requests**. Save.
-- **Settings → General → Features**: untick **Issues**. Change requests come by email to `reportEmail`; the maintainer reads them and passes on only the change itself.
+- **Settings → General → Features**: untick **Issues**. Issues come by email to `contactEmail`; the maintainer reads them and passes on only the change itself.
 - Optional: **Settings → Branches**, protect `main` so changes go through pull requests.
 
 ### 4. Connect Netlify

@@ -57,7 +57,7 @@ Past awards from Gateway to Research. Each row is `[title, funder group, funder 
 |---|---|
 | `contactName` | Shown as "Maintained by…" and in snapshots as "Contact … for info." |
 | `repo` | `owner/name` of this GitHub repository, for reference. There is no GitHub reporting button. |
-| `reportEmail` | The address visitors email to report a change. It turns on the "Report a change" button and is public on the site. `""` hides the button. |
+| `contactEmail` | Shown on the site as "To report issues, contact …". Public. If `""`, only `contactName` is shown. |
 | `siteUrl` | The public address, e.g. `https://creative-tech-funding.netlify.app`. Used as the "live version" link in snapshots. |
 
 ## `status.json`
