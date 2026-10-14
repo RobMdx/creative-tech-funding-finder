@@ -70,7 +70,7 @@ jobs:
         run: |
           git config user.name "funding-finder-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data site reports
+          git add data site reports proposals
           git commit -m "Weekly funding check (published automatically)" || echo "Nothing changed."
           git push
 
@@ -84,3 +84,4 @@ jobs:
           title: "Weekly funding check: needs a look"
           body-path: reports/latest.md
           labels: weekly-check
+          assignees: RobMdx

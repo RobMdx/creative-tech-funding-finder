@@ -8,6 +8,10 @@ For each candidate it reads the opportunity page's dates and amounts.
 Output: proposals/new-calls.json (for the optional AI step or a person),
 plus a section appended to reports/latest.md.
 
+Each new call is flagged once: shown links are remembered in
+proposals/seen.json, so the same call doesn't hold up the weekly
+auto-publish week after week. Delete a link from that file to see it again.
+
 This script never adds calls to the site by itself. Deciding relevance and
 who can take part needs a person (or the optional AI draft step, which a
 person still reviews).
@@ -44,6 +48,8 @@ def main() -> int:
         print(msg)
         return 0
     tracked = {s["u"].rstrip("/") for s in load("schemes.json")["schemes"]}
+    seen_path = ROOT / "proposals" / "seen.json"
+    seen = set(json.loads(seen_path.read_text(encoding="utf-8"))) if seen_path.exists() else set()
     root = ET.fromstring(body)
     found = []
     for item in root.iter("item"):
@@ -51,7 +57,7 @@ def main() -> int:
         link = (item.findtext("link") or "").strip()
         cat = (item.findtext("category") or "").strip()
         desc = re.sub(r"<[^>]+>", " ", item.findtext("description") or "")
-        if not link or link.rstrip("/") in tracked:
+        if not link or link.rstrip("/") in tracked or link.rstrip("/") in seen:
             continue
         if cat not in CORE_COUNCILS and not KEYWORDS.search(f"{title} {desc}"):
             continue
@@ -69,6 +75,9 @@ def main() -> int:
     out = ROOT / "proposals"
     out.mkdir(exist_ok=True)
     (out / "new-calls.json").write_text(json.dumps(found, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    # Remember what has been shown, so each call is flagged once, not every week.
+    seen.update(f["url"].rstrip("/") for f in found)
+    seen_path.write_text(json.dumps(sorted(seen), indent=1) + "\n", encoding="utf-8")
     lines = [f"- [{f['title']}]({f['url']}) · {f['council']} · closes {f.get('closing') or '?'}"
              + (f" · {', '.join('£{:,}'.format(a) for a in f['amounts'])}" if f.get("amounts") else "")
              for f in found]
