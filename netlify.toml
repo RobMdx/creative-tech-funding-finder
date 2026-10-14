@@ -1,0 +1,16 @@
+# Netlify only publishes the ready-made site/ folder. There is no build step here:
+# GitHub Actions validates the data and builds site/ before it reaches main.
+[build]
+  publish = "site"
+
+[[headers]]
+  for = "/data/*"
+  [headers.values]
+    Cache-Control = "public, max-age=300"
+    Access-Control-Allow-Origin = "*"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"

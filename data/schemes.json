@@ -1,0 +1,1140 @@
+{
+ "schemes": [
+  {
+   "id": "ahrc-catalyst",
+   "n": "AHRC Catalyst Award",
+   "f": "AHRC",
+   "amt": "£100k–£300k fEC",
+   "min": 100000,
+   "max": 300000,
+   "dl": "always",
+   "purpose": [
+    "research"
+   ],
+   "fac": [
+    "all"
+   ],
+   "note": "For people who have not led a UKRI grant before. Three expert reviews, your response, then panel. First-year success rate 5.1%.",
+   "u": "https://www.ukri.org/opportunity/ahrc-catalyst-awards-applicant-led-mode/",
+   "roles": {
+    "tech": {
+     "lvl": "lead",
+     "txt": "Can lead if you have never led a UKRI grant. Technicians are named in the call."
+    },
+    "practitioner": {
+     "lvl": "lead",
+     "txt": "Can lead if you have never led a UKRI grant. Archivists, curators and practitioners are named."
+    },
+    "ecr": {
+     "lvl": "lead",
+     "txt": "Can lead. Early-career fellowships do not count against your first-time status."
+    },
+    "academic": {
+     "lvl": "lead",
+     "txt": "Built for first-time leads. Being a co-lead or mentor before does not count against you."
+    },
+    "pi": {
+     "lvl": "colead",
+     "txt": "Cannot lead if you have led a UKRI research grant. You can be a co-lead or mentor."
+    },
+    "pgr": {
+     "lvl": "no",
+     "txt": "Doctoral students cannot lead or be costed on this grant"
+    },
+    "ps": {
+     "lvl": "team",
+     "txt": "Professional Enabling Staff: a named, costed role"
+    },
+    "partner": {
+     "lvl": "partner",
+     "txt": "Project partner: cash or in-kind support with a letter of support. Cannot receive the grant directly."
+    }
+   },
+   "checked": "2026-10-11",
+   "opens": null
+  },
+  {
+   "id": "ahrc-curiosity",
+   "n": "AHRC Curiosity Award",
+   "f": "AHRC",
+   "amt": "up to £100k fEC",
+   "min": 0,
+   "max": 100000,
+   "dl": "always",
+   "purpose": [
+    "research",
+    "network"
+   ],
+   "fac": [
+    "all"
+   ],
+   "note": "Supports practice-based and practice-led research, networks and partnership-building. Assessed by a panel only, then tiers with partial random selection. First-year success rate 6.9%.",
+   "u": "https://www.ukri.org/opportunity/ahrc-responsive-mode-curiosity-award/",
+   "roles": {
+    "tech": {
+     "lvl": "lead",
+     "txt": "Can lead. Technicians are named as welcome. You need a PhD or equivalent research experience, argued in your narrative CV."
+    },
+    "practitioner": {
+     "lvl": "lead",
+     "txt": "Can lead. No academic post is needed, but you must be employed by an eligible research organisation."
+    },
+    "ecr": {
+     "lvl": "lead",
+     "txt": "Can lead"
+    },
+    "academic": {
+     "lvl": "lead",
+     "txt": "Can lead"
+    },
+    "pi": {
+     "lvl": "lead",
+     "txt": "Can lead. Check the opportunity page for any limits linked to previous awards."
+    },
+    "pgr": {
+     "lvl": "no",
+     "txt": "Doctoral students cannot lead or be costed on this grant"
+    },
+    "ps": {
+     "lvl": "team",
+     "txt": "Professional Enabling Staff: a named, costed role"
+    },
+    "partner": {
+     "lvl": "partner",
+     "txt": "Project partner: cash or in-kind support with a letter of support. Cannot receive the grant directly."
+    }
+   },
+   "checked": "2026-10-11",
+   "opens": null
+  },
+  {
+   "id": "ahrc-intl",
+   "n": "AHRC international lead-agency grants (NSF-SBE, FAPESP, FNR)",
+   "f": "AHRC",
+   "amt": "£300k–£1.5m",
+   "min": 300000,
+   "max": 1500000,
+   "dl": "always",
+   "purpose": [
+    "research"
+   ],
+   "fac": [
+    "all"
+   ],
+   "note": "Joint bids with researchers in the US, Brazil or Luxembourg.",
+   "u": "https://www.ukri.org/opportunity/ahrc-responsive-mode-ukri-nsf-sbe-lead-agency/",
+   "roles": {
+    "tech": {
+     "lvl": "team",
+     "txt": "Specialist or Technician on the UK side"
+    },
+    "practitioner": {
+     "lvl": "colead",
+     "txt": "Co-lead or named team role"
+    },
+    "ecr": {
+     "lvl": "colead",
+     "txt": "Co-lead or named team role"
+    },
+    "academic": {
+     "lvl": "colead",
+     "txt": "Co-lead, or lead if you meet the standard grant rules"
+    },
+    "pi": {
+     "lvl": "lead",
+     "txt": "Lead with a partner-country co-lead"
+    },
+    "pgr": {
+     "lvl": "no",
+     "txt": "Doctoral students cannot lead or be costed on this grant"
+    },
+    "ps": {
+     "lvl": "team",
+     "txt": "Professional Enabling Staff: a named, costed role"
+    },
+    "partner": {
+     "lvl": "partner",
+     "txt": "Project partner: cash or in-kind support with a letter of support. Cannot receive the grant directly."
+    }
+   },
+   "checked": "2026-10-11",
+   "opens": null
+  },
+  {
+   "id": "ahrc-large",
+   "n": "AHRC Large Grants (outline stage)",
+   "f": "AHRC",
+   "amt": "£2m–£3m",
+   "min": 2000000,
+   "max": 3000000,
+   "dl": "2026-09-16",
+   "purpose": [
+    "research"
+   ],
+   "fac": [
+    "all"
+   ],
+   "note": "The outline stage has closed. The full stage in January 2027 appears to be by invitation. Listed for reference.",
+   "u": "https://www.ukri.org/opportunity/ahrc-large-grants-outline-stage/",
+   "roles": {
+    "tech": {
+     "lvl": "team",
+     "txt": "Named team role"
+    },
+    "practitioner": {
+     "lvl": "team",
+     "txt": "Named team role"
+    },
+    "ecr": {
+     "lvl": "team",
+     "txt": "Named team role"
+    },
+    "academic": {
+     "lvl": "team",
+     "txt": "Co-lead or team role"
+    },
+    "pi": {
+     "lvl": "lead",
+     "txt": "Can lead"
+    },
+    "pgr": {
+     "lvl": "no",
+     "txt": "Doctoral students cannot lead or be costed on this grant"
+    },
+    "ps": {
+     "lvl": "team",
+     "txt": "Professional Enabling Staff: a named, costed role"
+    },
+    "partner": {
+     "lvl": "colead",
+     "txt": "Business, third-sector and government partners can be formal co-leads"
+    }
+   },
+   "checked": "2026-10-11",
+   "opens": null
+  },
+  {
+   "id": "ahrc-poc",
+   "n": "UKRI Translation: AHRC Proof of Concept",
+   "f": "AHRC",
+   "amt": "up to £150k fEC",
+   "min": 0,
+   "max": 150000,
+   "dl": "always",
+   "purpose": [
+    "commercial"
+   ],
+   "fac": [
+    "all"
+   ],
+   "note": "Must build on earlier AHRC or UKRI funding. Needs a logic model. Panel only.",
+   "u": "https://www.ukri.org/opportunity/ukri-translation-ahrc-proof-of-concept/",
+   "roles": {
+    "tech": {
+     "lvl": "check",
+     "txt": "Possible if the work builds on an earlier AHRC or UKRI award. Check the eligibility section."
+    },
+    "practitioner": {
+     "lvl": "check",
+     "txt": "Possible if the work builds on an earlier AHRC or UKRI award"
+    },
+    "ecr": {
+     "lvl": "check",
+     "txt": "Possible if the work builds on an earlier AHRC or UKRI award"
+    },
+    "academic": {
+     "lvl": "check",
+     "txt": "Possible if the work builds on an earlier AHRC or UKRI award"
+    },
+    "pi": {
+     "lvl": "lead",
+     "txt": "Lead a follow-on from your earlier award"
+    },
+    "pgr": {
+     "lvl": "no",
+     "txt": "Doctoral students cannot lead or be costed on this grant"
+    },
+    "ps": {
+     "lvl": "team",
+     "txt": "Professional Enabling Staff: a named, costed role"
+    },
+    "partner": {
+     "lvl": "partner",
+     "txt": "Project partner: cash or in-kind support with a letter of support. Cannot receive the grant directly."
+    }
+   },
+   "checked": "2026-10-11",
+   "opens": null
+  },
+  {
+   "id": "ahrc-standard",
+   "n": "AHRC Standard Research Grant",
+   "f": "AHRC",
+   "amt": "£300k–£1.5m fEC",
+   "min": 300000,
+   "max": 1500000,
+   "dl": "always",
+   "purpose": [
+    "research"
+   ],
+   "fac": [
+    "all"
+   ],
+   "note": "Needs a lead plus at least one co-lead. No single equipment item over £25k.",
+   "u": "https://www.ukri.org/opportunity/ahrc-responsive-mode-standard-research-grant/",
+   "roles": {
+    "tech": {
+     "lvl": "lead",
+     "txt": "Technicians are welcome as applicants; the lead needs at least one co-lead. Specialist and Technician roles are also costed."
+    },
+    "practitioner": {
+     "lvl": "lead",
+     "txt": "Can lead with a co-lead if employed by an eligible research organisation"
+    },
+    "ecr": {
+     "lvl": "lead",
+     "txt": "Can lead with at least one co-lead"
+    },
+    "academic": {
+     "lvl": "lead",
+     "txt": "Can lead with at least one co-lead"
+    },
+    "pi": {
+     "lvl": "lead",
+     "txt": "Can lead with at least one co-lead"
+    },
+    "pgr": {
+     "lvl": "no",
+     "txt": "Doctoral students cannot lead or be costed on this grant"
+    },
+    "ps": {
+     "lvl": "team",
+     "txt": "Professional Enabling Staff: a named, costed role"
+    },
+    "partner": {
+     "lvl": "partner",
+     "txt": "Project partner: cash or in-kind support with a letter of support. Cannot receive the grant directly."
+    }
+   },
+   "checked": "2026-10-11",
+   "opens": null
+  },
+  {
+   "id": "bridgeai",
+   "n": "BridgeAI Deployment Catalyst",
+   "f": "Innovate UK",
+   "amt": "£100k–£200k grants",
+   "min": 100000,
+   "max": 200000,
+   "dl": "2026-12-08",
+   "opens": "2026-10-21",
+   "purpose": [
+    "commercial"
+   ],
+   "fac": [
+    "ai"
+   ],
+   "note": "Opens 21 Oct 2026. An SME leads with an organisation that will deploy the AI; at most three partners. Projects run 3–5 months.",
+   "u": "https://apply-for-innovation-funding.service.gov.uk/competition/2599/overview/1931f35c-87fe-4b6a-a718-a61a2d00e86a",
+   "roles": {
+    "tech": {
+     "lvl": "check",
+     "txt": "A university's role is not clear in the brief; academic institutions cannot lead"
+    },
+    "practitioner": {
+     "lvl": "check",
+     "txt": "A university's role is not clear in the brief; academic institutions cannot lead"
+    },
+    "ecr": {
+     "lvl": "check",
+     "txt": "A university's role is not clear in the brief; academic institutions cannot lead"
+    },
+    "academic": {
+     "lvl": "check",
+     "txt": "A university's role is not clear in the brief; academic institutions cannot lead"
+    },
+    "pi": {
+     "lvl": "check",
+     "txt": "A university's role is not clear in the brief; academic institutions cannot lead"
+    },
+    "pgr": {
+     "lvl": "no",
+     "txt": "Not a route for students"
+    },
+    "ps": {
+     "lvl": "check",
+     "txt": "A university's role is not clear in the brief; academic institutions cannot lead"
+    },
+    "partner": {
+     "lvl": "lead",
+     "txt": "An SME leads with an AI deployer"
+    }
+   },
+   "checked": "2026-10-11"
+  },
+  {
+   "id": "business-connect",
+   "n": "Innovate UK Business Connect: Creative Industries and the Immersive Tech Network",
+   "f": "Innovate UK",
+   "amt": "free",
+   "min": null,
+   "max": null,
+   "dl": "always",
+   "purpose": [
+    "network"
+   ],
+   "fac": [
+    "all"
+   ],
+   "note": "Help finding partners, shaping bids and showcasing work. The Immersive Tech Network is open to UK businesses and research organisations.",
+   "u": "https://iuk-business-connect.org.uk/creative-industries/",
+   "roles": {
+    "tech": {
+     "lvl": "info",
+     "txt": "Free brokerage, events and partner-finding"
+    },
+    "practitioner": {
+     "lvl": "info",
+     "txt": "Free brokerage, events and partner-finding"
+    },
+    "ecr": {
+     "lvl": "info",
+     "txt": "Free brokerage, events and partner-finding"
+    },
+    "academic": {
+     "lvl": "info",
+     "txt": "Free brokerage, events and partner-finding"
+    },
+    "pi": {
+     "lvl": "info",
+     "txt": "Free brokerage, events and partner-finding"
+    },
+    "pgr": {
+     "lvl": "info",
+     "txt": "Free brokerage, events and partner-finding"
+    },
+    "ps": {
+     "lvl": "info",
+     "txt": "Free brokerage, events and partner-finding"
+    },
+    "partner": {
+     "lvl": "info",
+     "txt": "Free brokerage, events and partner-finding"
+    }
+   },
+   "checked": "2026-10-11",
+   "opens": null
+  },
+  {
+   "id": "clusters-w3",
+   "n": "Creative Industries Clusters: wave 3 (outline stage)",
+   "f": "UKRI-wide / joint",
+   "amt": "£27m call",
+   "min": 2000000,
+   "max": null,
+   "dl": "2027-01",
+   "purpose": [
+    "ke",
+    "infrastructure"
+   ],
+   "fac": [
+    "all"
+   ],
+   "note": "Place-based university–industry R&D. Prioritises new places and sub-sectors such as design and music. Universities that led a first-wave cluster cannot lead.",
+   "u": "https://www.ukri.org/apply-for-funding/future-research-and-innovation-funding-opportunities/",
+   "roles": {
+    "tech": {
+     "lvl": "team",
+     "txt": "Named team role. Facilities and their use were a key cluster output."
+    },
+    "practitioner": {
+     "lvl": "team",
+     "txt": "Named team role"
+    },
+    "ecr": {
+     "lvl": "team",
+     "txt": "Named team role"
+    },
+    "academic": {
+     "lvl": "team",
+     "txt": "Co-lead or team member"
+    },
+    "pi": {
+     "lvl": "lead",
+     "txt": "Leads an institution-led consortium"
+    },
+    "pgr": {
+     "lvl": "no",
+     "txt": "Doctoral students cannot lead or be costed on this grant"
+    },
+    "ps": {
+     "lvl": "team",
+     "txt": "Brokerage and producer roles drove first-wave results"
+    },
+    "partner": {
+     "lvl": "partner",
+     "txt": "Industry and cultural partners co-invest and co-produce"
+    }
+   },
+   "checked": "2026-10-11",
+   "opens": null
+  },
+  {
+   "id": "costar-satellite",
+   "n": "CoSTAR Satellite Labs",
+   "f": "UKRI-wide / joint",
+   "amt": "up to £2m (£4m fund)",
+   "min": 0,
+   "max": 2000000,
+   "dl": "2026-10-29",
+   "purpose": [
+    "infrastructure"
+   ],
+   "fac": [
+    "film",
+    "mocap",
+    "ai",
+    "elec"
+   ],
+   "note": "Must be co-sited with a screen production facility, studio or performance company, in a region distinct from existing CoSTAR labs. Partners must provide match funding of at least 50%. Three years from April 2027.",
+   "u": "https://www.ukri.org/opportunity/costar-satellite-labs-accessible-creative-rd-infrastructure/",
+   "roles": {
+    "tech": {
+     "lvl": "team",
+     "txt": "Technician is a named role, and the call asks for training plans for Research Technical Professionals"
+    },
+    "practitioner": {
+     "lvl": "team",
+     "txt": "Named team role"
+    },
+    "ecr": {
+     "lvl": "team",
+     "txt": "Named team role"
+    },
+    "academic": {
+     "lvl": "team",
+     "txt": "Co-lead or team member"
+    },
+    "pi": {
+     "lvl": "lead",
+     "txt": "Can lead only at professorial or equivalent standing, with a strong strategic delivery record"
+    },
+    "pgr": {
+     "lvl": "no",
+     "txt": "Doctoral students cannot lead or be costed on this grant"
+    },
+    "ps": {
+     "lvl": "team",
+     "txt": "Professional Enabling Staff. The bid needs heavy partnership management."
+    },
+    "partner": {
+     "lvl": "partner",
+     "txt": "Required: an industry co-location partner and a local or combined authority, with at least 50% match funding"
+    }
+   },
+   "checked": "2026-10-11",
+   "opens": null
+  },
+  {
+   "id": "costar-showcase",
+   "n": "CoSTAR Showcase Labs",
+   "f": "UKRI-wide / joint",
+   "amt": "up to £4m (£8m fund)",
+   "min": 0,
+   "max": 4000000,
+   "dl": "2026-10-29",
+   "purpose": [
+    "infrastructure",
+    "commercial"
+   ],
+   "fac": [
+    "film",
+    "mocap",
+    "ai",
+    "elec"
+   ],
+   "note": "Near-market work (TRL 6–9), funded through DCMS Createch Futures. At most two awards.",
+   "u": "https://www.ukri.org/opportunity/costar-showcase-labs-createch-infrastructure-and-commercialisation/",
+   "roles": {
+    "tech": {
+     "lvl": "team",
+     "txt": "Technician is a named role"
+    },
+    "practitioner": {
+     "lvl": "team",
+     "txt": "Named team role"
+    },
+    "ecr": {
+     "lvl": "team",
+     "txt": "Named team role"
+    },
+    "academic": {
+     "lvl": "team",
+     "txt": "Co-lead or team member"
+    },
+    "pi": {
+     "lvl": "lead",
+     "txt": "Can lead only at professorial or equivalent standing"
+    },
+    "pgr": {
+     "lvl": "no",
+     "txt": "Doctoral students cannot lead or be costed on this grant"
+    },
+    "ps": {
+     "lvl": "team",
+     "txt": "Professional Enabling Staff: a named, costed role"
+    },
+    "partner": {
+     "lvl": "partner",
+     "txt": "Industry and local-authority partners are required, with at least 50% match funding"
+    }
+   },
+   "checked": "2026-10-11",
+   "opens": null
+  },
+  {
+   "id": "epsrc-nia",
+   "n": "EPSRC New Investigator Award",
+   "f": "UKRI-wide / joint",
+   "amt": "see opportunity page",
+   "min": null,
+   "max": null,
+   "dl": "always",
+   "purpose": [
+    "research"
+   ],
+   "fac": [
+    "ai",
+    "elec",
+    "fab",
+    "mocap"
+   ],
+   "note": "Always open since 5 Aug 2026. Most of the work must sit in EPSRC's remit (engineering and physical sciences), so it suits computing-led creative-tech projects. Technician is a core team role.",
+   "u": "https://www.ukri.org/opportunity/epsrc-new-investigator-award-applicant-led-mode/",
+   "roles": {
+    "tech": {
+     "lvl": "check",
+     "txt": "Technician is a core team role. To lead, check EPSRC's eligibility rules."
+    },
+    "practitioner": {
+     "lvl": "check",
+     "txt": "Check EPSRC eligibility and remit"
+    },
+    "ecr": {
+     "lvl": "lead",
+     "txt": "Can lead if you have never led a single award over £175k fEC"
+    },
+    "academic": {
+     "lvl": "lead",
+     "txt": "Can lead if you have never led a single award over £175k fEC"
+    },
+    "pi": {
+     "lvl": "no",
+     "txt": "Not eligible if you have led an award over £175k fEC"
+    },
+    "pgr": {
+     "lvl": "no",
+     "txt": "Doctoral students cannot lead or be costed on this grant"
+    },
+    "ps": {
+     "lvl": "team",
+     "txt": "Professional Enabling Staff: a named, costed role"
+    },
+    "partner": {
+     "lvl": "partner",
+     "txt": "Project partner: cash or in-kind support with a letter of support. Cannot receive the grant directly."
+    }
+   },
+   "checked": "2026-10-11",
+   "opens": null
+  },
+  {
+   "id": "flf-r12",
+   "n": "Future Leaders Fellowships: round 12",
+   "f": "UKRI-wide / joint",
+   "amt": "about £110m round; up to 7 years",
+   "min": 300000,
+   "max": null,
+   "dl": "2027-02",
+   "purpose": [
+    "fellowship"
+   ],
+   "fac": [
+    "all"
+   ],
+   "note": "For people establishing or moving to research independence. No permanent post is needed. Universities cap how many applications they submit.",
+   "u": "https://www.ukri.org/apply-for-funding/future-research-and-innovation-funding-opportunities/",
+   "roles": {
+    "tech": {
+     "lvl": "check",
+     "txt": "Possible if you are establishing an independent research career. Ask your research office about the university's internal selection."
+    },
+    "practitioner": {
+     "lvl": "check",
+     "txt": "Possible if you are moving into an independent research career"
+    },
+    "ecr": {
+     "lvl": "lead",
+     "txt": "Designed for people establishing independence"
+    },
+    "academic": {
+     "lvl": "lead",
+     "txt": "Suitable if you are moving to research independence"
+    },
+    "pi": {
+     "lvl": "check",
+     "txt": "Aimed at people establishing independence, not established leads"
+    },
+    "pgr": {
+     "lvl": "check",
+     "txt": "Usually after the doctorate. Check the person specification."
+    },
+    "ps": {
+     "lvl": "info",
+     "txt": "Research offices run the university's internal selection"
+    },
+    "partner": {
+     "lvl": "lead",
+     "txt": "Businesses and non-academic organisations can host fellows through a separate route"
+    }
+   },
+   "checked": "2026-10-11",
+   "opens": null
+  },
+  {
+   "id": "heif-kef",
+   "n": "Higher Education Innovation Fund (HEIF) and the Knowledge Exchange Framework (KEF)",
+   "f": "Research England",
+   "amt": "£280m a year across the sector",
+   "min": null,
+   "max": null,
+   "dl": "always",
+   "purpose": [
+    "ke"
+   ],
+   "fac": [
+    "all"
+   ],
+   "note": "Institutional knowledge-exchange funding. Short courses, SME access to facilities and public events count in the university's returns.",
+   "u": "https://www.ukri.org/news/higher-education-innovation-funding-to-focus-on-economic-growth/",
+   "roles": {
+    "tech": {
+     "lvl": "info",
+     "txt": "Your knowledge-exchange work counts in the university's returns. Ask how it is recorded."
+    },
+    "practitioner": {
+     "lvl": "info",
+     "txt": "Your knowledge-exchange work counts in the university's returns. Ask how it is recorded."
+    },
+    "ecr": {
+     "lvl": "info",
+     "txt": "Your knowledge-exchange work counts in the university's returns. Ask how it is recorded."
+    },
+    "academic": {
+     "lvl": "info",
+     "txt": "Your knowledge-exchange work counts in the university's returns. Ask how it is recorded."
+    },
+    "pi": {
+     "lvl": "info",
+     "txt": "Your knowledge-exchange work counts in the university's returns. Ask how it is recorded."
+    },
+    "pgr": {
+     "lvl": "info",
+     "txt": "Your knowledge-exchange work counts in the university's returns. Ask how it is recorded."
+    },
+    "ps": {
+     "lvl": "info",
+     "txt": "Shapes how the university plans and reports its knowledge exchange"
+    },
+    "partner": {
+     "lvl": "info",
+     "txt": "Your knowledge-exchange work counts in the university's returns. Ask how it is recorded."
+    }
+   },
+   "checked": "2026-10-11",
+   "opens": null
+  },
+  {
+   "id": "heritage-science",
+   "n": "Unlocking advanced capabilities in conservation and heritage science",
+   "f": "AHRC",
+   "amt": "£500k–£1.5m (£6.2m fund)",
+   "min": 500000,
+   "max": 1500000,
+   "dl": "2026-11-25",
+   "purpose": [
+    "infrastructure",
+    "research"
+   ],
+   "fac": [
+    "photo",
+    "ai",
+    "fab",
+    "dark"
+   ],
+   "note": "Possible fit through imaging, digitisation and fabrication. Eligibility details have not been checked here.",
+   "u": "https://www.ukri.org/opportunity/unlocking-advanced-capabilities-in-conservation-and-heritage-science/",
+   "roles": {
+    "tech": {
+     "lvl": "check",
+     "txt": "Check the eligibility section of the call"
+    },
+    "practitioner": {
+     "lvl": "check",
+     "txt": "Check the eligibility section of the call"
+    },
+    "ecr": {
+     "lvl": "check",
+     "txt": "Check the eligibility section of the call"
+    },
+    "academic": {
+     "lvl": "check",
+     "txt": "Check the eligibility section of the call"
+    },
+    "pi": {
+     "lvl": "check",
+     "txt": "Check the eligibility section of the call"
+    },
+    "pgr": {
+     "lvl": "check",
+     "txt": "Check the eligibility section of the call"
+    },
+    "ps": {
+     "lvl": "check",
+     "txt": "Check the eligibility section of the call"
+    },
+    "partner": {
+     "lvl": "check",
+     "txt": "Check the eligibility section of the call"
+    }
+   },
+   "checked": "2026-10-11",
+   "opens": null
+  },
+  {
+   "id": "icure-discover",
+   "n": "AHRC CreaTech ICURe Discover, then Explore",
+   "f": "Innovate UK",
+   "amt": "up to £2.5k, then up to £35k",
+   "min": 0,
+   "max": 35000,
+   "dl": "tbc",
+   "purpose": [
+    "commercial",
+    "training"
+   ],
+   "fac": [
+    "all"
+   ],
+   "note": "Commercialisation training. Needs an earlier link to AHRC (e.g. CoSTAR, BRAID or a cluster). Discover is the required route into Explore. The next cohort date has not been published.",
+   "u": "https://iuk-business-connect.org.uk/opportunities/ahrc-createch-icure-discover-october-2026/",
+   "roles": {
+    "tech": {
+     "lvl": "lead",
+     "txt": "Technicians are explicitly eligible"
+    },
+    "practitioner": {
+     "lvl": "check",
+     "txt": "Eligible staff are listed as technicians, research students, post-docs and academics"
+    },
+    "ecr": {
+     "lvl": "lead",
+     "txt": "Post-docs are eligible"
+    },
+    "academic": {
+     "lvl": "lead",
+     "txt": "Academics are eligible"
+    },
+    "pi": {
+     "lvl": "lead",
+     "txt": "Academics are eligible"
+    },
+    "pgr": {
+     "lvl": "lead",
+     "txt": "Research students are eligible"
+    },
+    "ps": {
+     "lvl": "info",
+     "txt": "The technology transfer office must be involved before Explore"
+    },
+    "partner": {
+     "lvl": "no",
+     "txt": "For university staff and students"
+    }
+   },
+   "checked": "2026-10-11",
+   "opens": null
+  },
+  {
+   "id": "isambard-gateway",
+   "n": "Isambard-AI and Dawn supercomputers: Gateway route",
+   "f": "UKRI-wide / joint",
+   "amt": "up to 10,000 GPU hours (no cash)",
+   "min": null,
+   "max": null,
+   "dl": "always",
+   "purpose": [
+    "compute"
+   ],
+   "fac": [
+    "ai"
+   ],
+   "note": "Compute time for a 3-month window. Creative industries and generative models are priority areas. Useful for piloting creative-AI work before a bigger bid.",
+   "u": "https://www.ukri.org/opportunity/access-to-isambard-ai-and-dawn-airr-supercomputers-gateway-route/",
+   "roles": {
+    "tech": {
+     "lvl": "check",
+     "txt": "Researchers can apply for compute time; check who is eligible on the page"
+    },
+    "practitioner": {
+     "lvl": "check",
+     "txt": "Researchers can apply for compute time; check who is eligible on the page"
+    },
+    "ecr": {
+     "lvl": "check",
+     "txt": "Researchers can apply for compute time; check who is eligible on the page"
+    },
+    "academic": {
+     "lvl": "check",
+     "txt": "Researchers can apply for compute time; check who is eligible on the page"
+    },
+    "pi": {
+     "lvl": "check",
+     "txt": "Researchers can apply for compute time; check who is eligible on the page"
+    },
+    "pgr": {
+     "lvl": "check",
+     "txt": "Researchers can apply for compute time; check who is eligible on the page"
+    },
+    "ps": {
+     "lvl": "check",
+     "txt": "Researchers can apply for compute time; check who is eligible on the page"
+    },
+    "partner": {
+     "lvl": "lead",
+     "txt": "UK SMEs have a separate Rapid Access route (20,000 GPU hours)"
+    }
+   },
+   "checked": "2026-10-11",
+   "opens": null
+  },
+  {
+   "id": "ktp-r3",
+   "n": "Knowledge Transfer Partnership: Round 3",
+   "f": "Innovate UK",
+   "amt": "about £80k–£100k a year per project",
+   "min": 50000,
+   "max": 300000,
+   "dl": "2026-10-14",
+   "purpose": [
+    "ke"
+   ],
+   "fac": [
+    "all"
+   ],
+   "note": "The university leads and submits. A graduate Associate works in the company for 12–36 months. Support from a Knowledge Transfer Adviser is mandatory.",
+   "u": "https://apply-for-innovation-funding.service.gov.uk/competition/2514/overview/81b3dcb8-7d03-42ed-8b97-5e6e51c4d1ed",
+   "roles": {
+    "tech": {
+     "lvl": "check",
+     "txt": "You can contribute specialist facilities and expertise. Whether a technician can be the supervisor is not stated, so ask the KTP office."
+    },
+    "practitioner": {
+     "lvl": "check",
+     "txt": "Ask the KTP office who can join the academic team"
+    },
+    "ecr": {
+     "lvl": "check",
+     "txt": "You can join the academic team; ask the KTP office who can lead"
+    },
+    "academic": {
+     "lvl": "lead",
+     "txt": "Lead the university team, with at least half a day a week of supervision"
+    },
+    "pi": {
+     "lvl": "lead",
+     "txt": "Lead the university team"
+    },
+    "pgr": {
+     "lvl": "info",
+     "txt": "The Associate is a graduate recruited to work in the company"
+    },
+    "ps": {
+     "lvl": "team",
+     "txt": "KTP offices and Knowledge Transfer Advisers support every bid"
+    },
+    "partner": {
+     "lvl": "lead",
+     "txt": "You are the business partner. You need at least 2 FTE staff; SMEs get up to 67% grant."
+    }
+   },
+   "checked": "2026-10-11",
+   "opens": null
+  },
+  {
+   "id": "ktp-r4",
+   "n": "Knowledge Transfer Partnership: Round 4",
+   "f": "Innovate UK",
+   "amt": "about £80k–£100k a year per project",
+   "min": 50000,
+   "max": 300000,
+   "dl": "2027-01-20",
+   "opens": "2026-10-19",
+   "purpose": [
+    "ke"
+   ],
+   "fac": [
+    "all"
+   ],
+   "note": "Opens 19 Oct 2026. The university leads and submits. Support from a Knowledge Transfer Adviser is mandatory.",
+   "u": "https://www.ukri.org/councils/innovate-uk/guidance-for-applicants/guidance-for-specific-funds/knowledge-transfer-partnership-guidance/dates-and-deadlines-for-ktp-applicants/",
+   "roles": {
+    "tech": {
+     "lvl": "check",
+     "txt": "You can contribute specialist facilities and expertise. Whether a technician can be the supervisor is not stated, so ask the KTP office."
+    },
+    "practitioner": {
+     "lvl": "check",
+     "txt": "Ask the KTP office who can join the academic team"
+    },
+    "ecr": {
+     "lvl": "check",
+     "txt": "You can join the academic team; ask the KTP office who can lead"
+    },
+    "academic": {
+     "lvl": "lead",
+     "txt": "Lead the university team, with at least half a day a week of supervision"
+    },
+    "pi": {
+     "lvl": "lead",
+     "txt": "Lead the university team"
+    },
+    "pgr": {
+     "lvl": "info",
+     "txt": "The Associate is a graduate recruited to work in the company"
+    },
+    "ps": {
+     "lvl": "team",
+     "txt": "KTP offices and Knowledge Transfer Advisers support every bid"
+    },
+    "partner": {
+     "lvl": "lead",
+     "txt": "You are the business partner. You need at least 2 FTE staff; SMEs get up to 67% grant."
+    }
+   },
+   "checked": "2026-10-11"
+  },
+  {
+   "id": "mdi-hub",
+   "n": "MDI innovation and scale-up hub",
+   "f": "Innovate UK",
+   "amt": "£4m",
+   "min": 2000000,
+   "max": 4000000,
+   "dl": "2026-11-18",
+   "purpose": [
+    "infrastructure",
+    "ke"
+   ],
+   "fac": [
+    "fab",
+    "elec"
+   ],
+   "note": "For manufacturing digitalisation. Research organisations or academic institutions take part. Whether it fits creative fabrication is unconfirmed.",
+   "u": "https://www.ukri.org/opportunity/mdi-programme-innovation-and-scale-up-hub/",
+   "roles": {
+    "tech": {
+     "lvl": "team",
+     "txt": "Named team role"
+    },
+    "practitioner": {
+     "lvl": "check",
+     "txt": "Check the remit"
+    },
+    "ecr": {
+     "lvl": "check",
+     "txt": "Check the remit"
+    },
+    "academic": {
+     "lvl": "check",
+     "txt": "Check the remit"
+    },
+    "pi": {
+     "lvl": "lead",
+     "txt": "Research or academic institutions can lead; check the remit fits"
+    },
+    "pgr": {
+     "lvl": "no",
+     "txt": "Doctoral students cannot lead or be costed on this grant"
+    },
+    "ps": {
+     "lvl": "team",
+     "txt": "Professional Enabling Staff: a named, costed role"
+    },
+    "partner": {
+     "lvl": "check",
+     "txt": "Check the partner rules"
+    }
+   },
+   "checked": "2026-10-11",
+   "opens": null
+  },
+  {
+   "id": "next-wave",
+   "n": "Next Wave (createch growth) calls",
+   "f": "Innovate UK",
+   "amt": "not yet announced (wave 1: £100k–£500k projects)",
+   "min": 100000,
+   "max": 500000,
+   "dl": "2027",
+   "purpose": [
+    "commercial",
+    "ke"
+   ],
+   "fac": [
+    "film",
+    "ai",
+    "mocap",
+    "fine"
+   ],
+   "note": "Further calls are planned for 2027 in film and TV, games, music and performing and visual arts, and advertising. Wave 1 drew 700 applications, with an indicated success rate of about 10%.",
+   "u": "https://www.ukri.org/news/government-and-innovate-uk-back-creative-technology-growth/",
+   "roles": {
+    "tech": {
+     "lvl": "partner",
+     "txt": "University research partner: up to 30% of project costs at 80% fEC"
+    },
+    "practitioner": {
+     "lvl": "partner",
+     "txt": "University research partner: up to 30% of project costs at 80% fEC"
+    },
+    "ecr": {
+     "lvl": "partner",
+     "txt": "University research partner: up to 30% of project costs at 80% fEC"
+    },
+    "academic": {
+     "lvl": "partner",
+     "txt": "University research partner: up to 30% of project costs at 80% fEC"
+    },
+    "pi": {
+     "lvl": "partner",
+     "txt": "University research partner: up to 30% of project costs at 80% fEC"
+    },
+    "pgr": {
+     "lvl": "no",
+     "txt": "Not a route for students"
+    },
+    "ps": {
+     "lvl": "team",
+     "txt": "Costing and collaboration agreements"
+    },
+    "partner": {
+     "lvl": "lead",
+     "txt": "Micro, small or medium creative businesses lead"
+    }
+   },
+   "checked": "2026-10-11",
+   "opens": null
+  }
+ ]
+}

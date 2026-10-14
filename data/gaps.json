@@ -1,0 +1,175 @@
+{
+ "gaps": [
+  {
+   "t": "AI or robotics + printmaking",
+   "h": "sparse",
+   "fac": [
+    "ai",
+    "elec",
+    "fab",
+    "print"
+   ],
+   "ev": "0 projects in the sample. \"Printmaking\" returns only 24 GtR projects, nearly all historical.",
+   "idea": "Robotic and AI-assisted mark-making: what counts as the artist's hand when a machine pulls the print?",
+   "s": "Curiosity",
+   "id": "gap-01",
+   "order": 1
+  },
+  {
+   "t": "Computational imaging + darkroom / alternative processes",
+   "h": "sparse",
+   "fac": [
+    "photo",
+    "dark",
+    "ai"
+   ],
+   "ev": "\"Darkroom\": 4 GtR projects in total. Photography + AI: 3, all company camera tools.",
+   "idea": "Hybrid analogue–computational workflows; the provenance of chemical images as a check against synthetic media.",
+   "s": "Curiosity, then Catalyst",
+   "id": "gap-02",
+   "order": 2
+  },
+  {
+   "t": "AI + textiles (design and craft)",
+   "h": "sparse",
+   "fac": [
+    "tex",
+    "ai",
+    "fab"
+   ],
+   "ev": "5 projects, all Innovate UK sustainability or fashion. No AHRC grant found.",
+   "idea": "AI pattern tools trained on consented archives, with craft authorship and responsible AI built in.",
+   "s": "Catalyst",
+   "id": "gap-03",
+   "order": 3
+  },
+  {
+   "t": "E-textiles + performance / fine art",
+   "h": "sparse",
+   "fac": [
+    "tex",
+    "elec",
+    "mocap",
+    "fine"
+   ],
+   "ev": "77 hits, mostly EPSRC engineering; few arts-led projects.",
+   "idea": "Wearable sensing garments for dance, captured in mocap.",
+   "s": "Curiosity",
+   "id": "gap-04",
+   "order": 4
+  },
+  {
+   "t": "Motion capture + heritage / dance archives",
+   "h": "sparse",
+   "fac": [
+    "mocap",
+    "film",
+    "ai"
+   ],
+   "ev": "Heritage × mocap: 1 project. Dance-mocap work is concentrated at Goldsmiths.",
+   "idea": "Capturing and re-performing movement heritage as an archive, building on Middlesex's dance and performance record.",
+   "s": "Catalyst, with a heritage partner",
+   "id": "gap-05",
+   "order": 5
+  },
+  {
+   "t": "Electronics / physical computing + fine art",
+   "h": "sparse",
+   "fac": [
+    "elec",
+    "fine"
+   ],
+   "ev": "About 2 projects; none fine-art-led at AHRC.",
+   "idea": "Physical computing as a fine-art research method.",
+   "s": "Curiosity",
+   "id": "gap-06",
+   "order": 6
+  },
+  {
+   "t": "Robotics + craft / analogue making",
+   "h": "sparse",
+   "fac": [
+    "elec",
+    "fab",
+    "print",
+    "tex",
+    "fine"
+   ],
+   "ev": "1 AHRC project (Hybrid Digital Vernacular), plus older ceramics work at UWE.",
+   "idea": "Robot-arm making alongside hand processes: what knowledge transfers between them, and what doesn't?",
+   "s": "Curiosity",
+   "id": "gap-07",
+   "order": 7
+  },
+  {
+   "t": "Sustainability + digital fabrication",
+   "h": "sparse",
+   "fac": [
+    "fab",
+    "tex",
+    "print"
+   ],
+   "ev": "5 projects, mostly props and apparel. CoSTAR scores sustainability at 10%.",
+   "idea": "Low-carbon, circular material flows for creative making.",
+   "s": "Curiosity; Future Observatory if it reopens",
+   "id": "gap-08",
+   "order": 8
+  },
+  {
+   "t": "Responsible AI + creative archives",
+   "h": "growing",
+   "fac": [
+    "ai",
+    "photo",
+    "film",
+    "fine"
+   ],
+   "ev": "A funder-led priority: BRAID has funded 10 scoping projects, 17 fellowships and 3 demonstrators.",
+   "idea": "Use it as a frame on top of any sparse intersection: consent, credit and provenance.",
+   "s": "Any AHRC scheme",
+   "id": "gap-09",
+   "order": 9
+  },
+  {
+   "t": "Generative AI for screen / virtual production",
+   "h": "crowded",
+   "fac": [
+    "film",
+    "ai",
+    "mocap"
+   ],
+   "ev": "10+ AI × virtual production projects, many £50k company grants, plus the £53m CoSTAR National Lab.",
+   "idea": "Compete only with a niche such as access, training or inclusion.",
+   "s": "Innovate UK with an SME",
+   "id": "gap-10",
+   "order": 10
+  },
+  {
+   "t": "XR heritage / immersive storytelling",
+   "h": "crowded",
+   "fac": [
+    "film",
+    "ai",
+    "mocap"
+   ],
+   "ev": "Many 2018–19 AHRC immersive awards, StoryFutures and infrastructure awards.",
+   "idea": "Stronger if tied to Middlesex's STFC-funded FLOOD! / Space Plague work.",
+   "s": "Partner",
+   "id": "gap-11",
+   "order": 11
+  },
+  {
+   "t": "AI music / live coding",
+   "h": "crowded",
+   "fac": [
+    "ai",
+    "elec"
+   ],
+   "ev": "Specialist hubs at Goldsmiths, Sussex and QMUL.",
+   "idea": "Partner rather than compete.",
+   "s": "Partner",
+   "id": "gap-12",
+   "order": 12
+  }
+ ]
+}

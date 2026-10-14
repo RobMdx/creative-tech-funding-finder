@@ -1,0 +1,43 @@
+name: Build site
+
+# Whenever the data or page template changes on any branch, check the data,
+# rebuild site/ and commit it to the same branch. Netlify then publishes site/
+# from main (and shows a preview for pull requests). No build runs on Netlify.
+on:
+  push:
+    paths:
+      - "data/**"
+      - "src/**"
+      - "scripts/**"
+      - "tests/**"
+  pull_request: {}
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Test the page readers
+        run: python3 -m unittest discover tests
+      - name: Check the data and build site/
+        run: python3 scripts/build_site.py
+      - name: Commit the built site if it changed
+        # Pull requests are only checked here; the push to their branch does the commit.
+        if: github.event_name == 'push'
+        run: |
+          if [ -n "$(git status --porcelain site/)" ]; then
+            git config user.name "funding-finder-bot"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add site/
+            git commit -m "Rebuild site"
+            git push
+          else
+            echo "site/ already up to date."
+          fi

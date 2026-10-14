@@ -1,0 +1,60 @@
+{
+ "personas": [
+  {
+   "id": "tech",
+   "name": "Technician / Research Technical Professional",
+   "tip": "AHRC's Curiosity and Catalyst awards name technicians as welcome leads. You need a PhD or equivalent research experience, argued in your narrative CV. On someone else's bid, choose Specialist rather than Technician if you bring intellectual input. Both roles are costed.",
+   "order": 1,
+   "checked": "2026-10-11"
+  },
+  {
+   "id": "practitioner",
+   "name": "Practitioner, curator or archivist on staff",
+   "tip": "You don't need an academic post to lead Curiosity or Catalyst. You must be employed by an eligible research organisation, or have a formal arrangement with one, for the length of the grant.",
+   "order": 2,
+   "checked": "2026-10-11"
+  },
+  {
+   "id": "ecr",
+   "name": "Early career researcher",
+   "tip": "Catalyst is for first-time leads, and early-career fellowships don't count against you. Future Leaders Fellowships (round 12 expected Feb 2027) support moving to independence.",
+   "order": 3,
+   "checked": "2026-10-11"
+  },
+  {
+   "id": "academic",
+   "name": "Academic, not yet a project lead",
+   "tip": "Catalyst (£100k–£300k) is built for first-time leads; being a co-lead or mentor before doesn't count against you. Knowledge Transfer Partnerships let you lead a partnership with a company.",
+   "order": 4,
+   "checked": "2026-10-11"
+  },
+  {
+   "id": "pi",
+   "name": "Experienced project lead",
+   "tip": "You can't lead Catalyst, but you can be a co-lead or mentor. Standard grants, Large Grants, international bids and infrastructure calls such as CoSTAR need experienced leads. Give technicians the right named role.",
+   "order": 5,
+   "checked": "2026-10-11"
+  },
+  {
+   "id": "pgr",
+   "name": "Doctoral student",
+   "tip": "Doctoral students can't lead these grants. AHRC CreaTech ICURe Discover explicitly includes research students, and you can be named as a doctoral student in a project team.",
+   "order": 6,
+   "checked": "2026-10-11"
+  },
+  {
+   "id": "ps",
+   "name": "Research office or professional staff",
+   "tip": "Professional Enabling Staff is a named, costed role covering finance, marketing and partnership work. AHRC's July 2026 town hall told applicants to justify professional support as a cost.",
+   "order": 7,
+   "checked": "2026-10-11"
+  },
+  {
+   "id": "partner",
+   "name": "External partner (business or cultural organisation)",
+   "tip": "Businesses lead most Innovate UK calls, with universities as partners. On AHRC bids you are a project partner giving cash or in-kind support; on AHRC Large Grants you can be a formal co-lead. A KTP places a graduate in your company.",
+   "order": 8,
+   "checked": "2026-10-11"
+  }
+ ]
+}
