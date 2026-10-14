@@ -307,7 +307,7 @@ function renderRoutes(){
 }
 $('grid').addEventListener('click',e=>{
   const b=e.target.closest('[data-rep]');if(b){const id=b.dataset.rep,box=document.querySelector(`[data-form="${CSS.escape(id)}"]`);
-    box.innerHTML=`<form class="rep" data-id="${esc(id)}"><label for="t-${esc(id)}" class="note">What has changed? Include a link to the funder's page if you can.</label><textarea id="t-${esc(id)}" maxlength="800" required></textarea><div class="row">${CONFIG.repo?'<button class="btn" type="submit" data-via="github">Report on GitHub</button>':''}${CONFIG.reportEmail?'<button class="btn" type="submit" data-via="email">Email the maintainer</button>':''}<button class="btn ghost" type="submit" data-via="copy">Copy text</button><button type="button" class="btn ghost" data-cancel>Cancel</button></div><p class="note" data-hint></p></form>`;
+    box.innerHTML=`<form class="rep" data-id="${esc(id)}"><label for="t-${esc(id)}" class="note">What has changed? Include a link to the funder's page if you can.</label><textarea id="t-${esc(id)}" maxlength="800" required></textarea><div class="row">${CONFIG.reportEmail?'<button class="btn" type="submit" data-via="email">Email the maintainer</button>':''}<button class="btn ghost" type="submit" data-via="copy">Copy text</button><button type="button" class="btn ghost" data-cancel>Cancel</button></div><p class="note" data-hint></p></form>`;
     box.querySelector('textarea').focus();return;}
   if(e.target.closest('[data-cancel]')) e.target.closest('[data-form]').innerHTML='';
 });
@@ -317,8 +317,7 @@ $('grid').addEventListener('submit',async e=>{
   const sc=S.schemes.find(x=>x.id===id)||{n:id,u:''};
   const title=`Report: ${sc.n}`, body=`Scheme: ${sc.n} (${id})\nSource page: ${sc.u}\n\nWhat has changed:\n${txt.slice(0,800)}`;
   const via=e.submitter?.dataset.via||'copy';
-  if(via==='github'){window.open(`https://github.com/${CONFIG.repo}/issues/new?labels=report&title=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`,'_blank','noopener');hint.textContent='GitHub opened in a new tab. Sign in and press "Create". No GitHub account? Use Copy text and send it to '+CONTACT_NAME+'.';}
-  else if(via==='email'){location.href=`mailto:${CONFIG.reportEmail}?subject=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`;hint.textContent='Your email app should open. If it doesn\'t, copy the text and email '+CONFIG.reportEmail+'.';}
+  if(via==='email'){location.href=`mailto:${CONFIG.reportEmail}?subject=${encodeURIComponent(title)}&body=${encodeURIComponent(body)}`;hint.textContent='Your email app should open. If it doesn\'t, copy the text and email '+CONFIG.reportEmail+'.';}
   else{try{await navigator.clipboard.writeText(title+'\n\n'+body);hint.textContent='Copied. Paste it into an email to '+(CONFIG.reportEmail||CONTACT_NAME)+'.';}catch(err){f.querySelector('textarea').select();hint.textContent='Select the text above and copy it.';}}
 });
 function renderGaps(){
@@ -404,7 +403,7 @@ buildFilters();
       Object.assign(S,{schemes:a.schemes,personas:b.personas,gaps:c.gaps,projects:d.rows||[],status:e});CONFIG=Object.assign(CONFIG,f);
     }
     CONTACT_NAME=CONFIG.contactName||'Rob Crow';CONTACT=`Contact ${CONTACT_NAME} for info.`;
-    if(!SNAP){if(CONFIG.siteUrl)LIVE_URL=CONFIG.siteUrl;CAN_REPORT=!!(CONFIG.repo||CONFIG.reportEmail);$('dlbar').hidden=false;}
+    if(!SNAP){if(CONFIG.siteUrl)LIVE_URL=CONFIG.siteUrl;CAN_REPORT=!!CONFIG.reportEmail;$('dlbar').hidden=false;}
     $('maint').textContent=`Maintained by ${CONTACT_NAME}.`;
   }catch(err){$('grid').innerHTML='<div class="empty">The funding data could not be loaded. Refresh the page, or try again later.</div>';$('fresh').innerHTML='<span><span class="dot stale"></span>Data unavailable</span>';return;}
   renderWho();renderRoutes();renderGaps();renderBars();renderAwards();renderStatus();

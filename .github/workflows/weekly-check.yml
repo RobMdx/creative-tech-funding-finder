@@ -13,7 +13,6 @@ on:
 permissions:
   contents: write
   pull-requests: write
-  issues: read
 
 env:
   AUTO_PUBLISH: "true"      # set to "false" to always get a pull request instead
@@ -33,23 +32,6 @@ jobs:
       - name: Look for new calls in the UKRI feed (no AI)
         run: python3 scripts/new_calls.py
 
-      - name: List open reports from site visitors
-        id: reports
-        env:
-          GH_TOKEN: ${{ github.token }}
-        run: |
-          COUNT=$(gh issue list --label report --state open --limit 100 --json number --jq 'length' || echo 0)
-          echo "count=$COUNT" >> "$GITHUB_OUTPUT"
-          {
-            echo ""
-            echo "## Reports from visitors (open issues labelled 'report')"
-            echo ""
-            gh issue list --label report --state open --limit 50 \
-              --json number,title,url --template '{{range .}}- [#{{.number}} {{.title}}]({{.url}}){{"\n"}}{{end}}' || echo "_Could not read issues._"
-            echo ""
-            echo "Check each against the funder's page. Close the issue once it's dealt with."
-          } >> reports/latest.md
-
       - name: Draft entries for new calls (optional, uses the Claude API)
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
@@ -61,8 +43,6 @@ jobs:
 
       - name: Decide whether this week can publish itself
         id: decide
-        env:
-          OPEN_REPORTS: ${{ steps.reports.outputs.count }}
         run: python3 scripts/decide.py
 
       - name: Quiet week - publish straight away

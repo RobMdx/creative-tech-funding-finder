@@ -21,7 +21,6 @@ scripts/
 .github/workflows/
   build.yml        ← on every push: test, validate, rebuild site/, commit it
   weekly-check.yml ← Mondays: run the checks, rebuild, open a pull request for review
-.github/ISSUE_TEMPLATE/report.md ← "Report a change" form for visitors
 skills/funding-finder-updater/SKILL.md ← instructions for whoever (or whichever agent) maintains it
 docs/DATA.md       ← what every data field means
 reports/           ← one report per weekly run
@@ -30,7 +29,7 @@ reports/           ← one report per weekly run
 **The weekly loop:**
 
 1. Every Monday, GitHub runs the checks and rebuilds `site/`.
-2. **Quiet weeks publish themselves.** A week is quiet when the only changes are dates read from the funder pages, and there are no review items, broken links, possible new calls, AI drafts or open visitor reports. The result is committed to `main`, and Netlify publishes it. You don't need to do anything.
+2. **Quiet weeks publish themselves.** A week is quiet when the only changes are dates read from the funder pages, and there are no review items, broken links, possible new calls or AI drafts. The result is committed to `main`, and Netlify publishes it. You don't need to do anything.
 3. **Otherwise it opens a pull request** called **Weekly funding check: needs a look**, and GitHub notifies you. The description lists what needs a person. Netlify adds a deploy preview link.
 4. You review and merge. Netlify then publishes it, usually within a minute.
 
@@ -51,8 +50,8 @@ New calls, AI drafts and anything uncertain never go live without a person mergi
 }
 ```
 
-- `repo` turns on the **Report on GitHub** button.
-- `reportEmail` is optional. If set, it adds an **Email the maintainer** button. That address becomes public, so use a role or shared address if you can.
+- `repo` names this GitHub repository. Visitors can no longer report changes through GitHub issues (removed 14 Oct 2026, so that free text from the public never reaches the weekly review).
+- `reportEmail` turns on the **Report a change** button, which offers **Email the maintainer** and **Copy text**. That address is public on the site.
 - You can fill in `siteUrl` after step 4.
 
 ### 2. Put the folder on GitHub
@@ -70,12 +69,12 @@ git remote add origin https://github.com/<you>/creative-tech-funding-finder.git
 git push -u origin main
 ```
 
-**Public or private?** A public repository gets GitHub Actions free, and visitors can see where the data comes from. Reports also need visitors to be able to open issues, which only works on a public repository. If it's private, reports have to come by email instead.
+**Public or private?** A public repository gets GitHub Actions free, and visitors can see where the data comes from. Visitor reports come by email either way.
 
 ### 3. Repository settings
 
 - **Settings → Actions → General → Workflow permissions**: choose **Read and write permissions** and tick **Allow GitHub Actions to create and approve pull requests**. Save.
-- **Issues → Labels**: make sure a label called `report` exists. Create it if not.
+- **Settings → General → Features**: untick **Issues**. Change requests come by email to `reportEmail`; the maintainer reads them and passes on only the change itself.
 - Optional: **Settings → Branches**, protect `main` so changes go through pull requests.
 
 ### 4. Connect Netlify
