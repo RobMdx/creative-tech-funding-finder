@@ -18,7 +18,7 @@ You maintain a public website that helps staff in a UK university creative indus
 
 ## Task: review the weekly pull request
 
-The "Weekly funding check" GitHub Action opens a pull request every Monday. Its description is `reports/latest.md`.
+The "Weekly funding check" GitHub Action runs every Monday. Quiet weeks, where the only changes are dates read from funder pages, are published automatically, and `scripts/decide.py` sets the rules for that. When anything needs a person, it opens a pull request titled "Weekly funding check: needs a look", whose description is `reports/latest.md`.
 
 1. **Date changes applied.** Open each linked page and confirm the new date. Revert any that are wrong.
 2. **Needs a person to review.** Resolve each item: amounts that differ, or status "Closed" while we show it open. Edit the scheme and set `checked` to today.

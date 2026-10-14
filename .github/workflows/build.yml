@@ -10,7 +10,6 @@ on:
       - "src/**"
       - "scripts/**"
       - "tests/**"
-  pull_request: {}
   workflow_dispatch: {}
 
 permissions:
@@ -29,7 +28,6 @@ jobs:
       - name: Check the data and build site/
         run: python3 scripts/build_site.py
       - name: Commit the built site if it changed
-        # Pull requests are only checked here; the push to their branch does the commit.
         if: github.event_name == 'push'
         run: |
           if [ -n "$(git status --porcelain site/)" ]; then

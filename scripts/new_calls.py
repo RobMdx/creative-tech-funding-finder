@@ -40,6 +40,7 @@ def main() -> int:
     if code != 200 or not body:
         msg = f"\n## New calls\n\n_The UKRI feed could not be read (status {code})._\n"
         _append(msg)
+        _count("feed_error", 1)
         print(msg)
         return 0
     tracked = {s["u"].rstrip("/") for s in load("schemes.json")["schemes"]}
@@ -74,8 +75,16 @@ def main() -> int:
     msg = "\n## Possible new calls from the UKRI feed\n\n" + ("\n".join(lines) if lines else "_None this week._") + \
           "\n\nThe feed only lists recent posts, so also skim the AHRC opportunity list and the Innovation Funding Service now and then.\n"
     _append(msg)
+    _count("new_calls", len(found))
     print(msg)
     return 0
+
+
+def _count(key: str, n: int) -> None:
+    p = REPORTS / "summary.json"
+    d = json.loads(p.read_text(encoding="utf-8")) if p.exists() else {}
+    d[key] = n
+    p.write_text(json.dumps(d, indent=1), encoding="utf-8")
 
 
 def _append(text: str) -> None:

@@ -114,6 +114,10 @@ def main() -> int:
         ids.add(d["id"])
         added.append(f"- **{d['n']}** ({d['id']}): drafted; check every role before approving")
     save("schemes.json", data)
+    sp = REPORTS / "summary.json"
+    sd = json.loads(sp.read_text(encoding="utf-8")) if sp.exists() else {}
+    sd["ai_drafts"] = len(added)
+    sp.write_text(json.dumps(sd, indent=1), encoding="utf-8")
     msg = "\n## AI-drafted entries\n\n" + ("\n".join(added) if added else "_None added._") + \
           ("\n\nSkipped:\n" + "\n".join(skipped) if skipped else "") + "\n"
     REPORTS.mkdir(exist_ok=True)

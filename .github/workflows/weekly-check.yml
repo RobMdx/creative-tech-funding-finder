@@ -1,5 +1,10 @@
 name: Weekly funding check
 
+# Every Monday: check each call's page and the UKRI feed, then rebuild the site.
+# Quiet weeks (only dates changed, nothing needs a person) publish themselves.
+# Anything else opens a "Weekly funding check" pull request for review,
+# and GitHub notifies you about it.
+
 on:
   schedule:
     - cron: "45 6 * * 1"   # Mondays 06:45 UTC (07:45 UK summer time, 06:45 winter)
@@ -9,6 +14,9 @@ permissions:
   contents: write
   pull-requests: write
   issues: read
+
+env:
+  AUTO_PUBLISH: "true"      # set to "false" to always get a pull request instead
 
 jobs:
   check:
@@ -26,9 +34,12 @@ jobs:
         run: python3 scripts/new_calls.py
 
       - name: List open reports from site visitors
+        id: reports
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
+          COUNT=$(gh issue list --label report --state open --limit 100 --json number --jq 'length' || echo 0)
+          echo "count=$COUNT" >> "$GITHUB_OUTPUT"
           {
             echo ""
             echo "## Reports from visitors (open issues labelled 'report')"
@@ -48,12 +59,28 @@ jobs:
       - name: Check the data and build site/
         run: python3 scripts/build_site.py
 
-      - name: Open a pull request for review
+      - name: Decide whether this week can publish itself
+        id: decide
+        env:
+          OPEN_REPORTS: ${{ steps.reports.outputs.count }}
+        run: python3 scripts/decide.py
+
+      - name: Quiet week - publish straight away
+        if: steps.decide.outputs.quiet == 'true'
+        run: |
+          git config user.name "funding-finder-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data site reports
+          git commit -m "Weekly funding check (published automatically)" || echo "Nothing changed."
+          git push
+
+      - name: Needs a person - open a pull request
+        if: steps.decide.outputs.quiet != 'true'
         uses: peter-evans/create-pull-request@v8
         with:
           branch: weekly-check
           delete-branch: true
           commit-message: "Weekly funding check"
-          title: "Weekly funding check"
+          title: "Weekly funding check: needs a look"
           body-path: reports/latest.md
           labels: weekly-check

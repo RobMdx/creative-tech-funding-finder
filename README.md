@@ -30,11 +30,11 @@ reports/           ← one report per weekly run
 **The weekly loop:**
 
 1. Every Monday, GitHub runs the checks and rebuilds `site/`.
-2. It opens a pull request called **Weekly funding check**. The description lists what changed, what needs a person, and any visitor reports.
-3. You review it. If Netlify deploy previews are on, the pull request also gets a preview link.
-4. You merge. Netlify sees `site/` change on `main` and publishes it, usually within a minute.
+2. **Quiet weeks publish themselves.** A week is quiet when the only changes are dates read from the funder pages, and there are no review items, broken links, possible new calls, AI drafts or open visitor reports. The result is committed to `main`, and Netlify publishes it. You don't need to do anything.
+3. **Otherwise it opens a pull request** called **Weekly funding check: needs a look**, and GitHub notifies you. The description lists what needs a person. Netlify adds a deploy preview link.
+4. You review and merge. Netlify then publishes it, usually within a minute.
 
-Nothing reaches the live site without a person merging it.
+New calls, AI drafts and anything uncertain never go live without a person merging them. To get a pull request every week instead, set `AUTO_PUBLISH: "false"` in `.github/workflows/weekly-check.yml`.
 
 **Editing by hand** works the same way. Edit a file in `data/` on github.com (pencil icon) or locally. The **Build site** action checks it, rebuilds `site/` and commits that to the same branch. If the data has a mistake, the action fails and tells you what's wrong, and `site/` isn't touched, so the live site stays as it was.
 

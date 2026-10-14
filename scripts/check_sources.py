@@ -118,6 +118,10 @@ def main() -> int:
         sec("Not machine-checked", unparsed),
     ])
     if not dry:
+        import json
+        (REPORTS / "summary.json").write_text(json.dumps({
+            "date_changes": len(applied), "review": len(review), "broken": len(broken),
+            "not_machine_checked": len(unparsed), "closing_soon": len(soon)}, indent=1), encoding="utf-8")
         (REPORTS / f"weekly-{now}.md").write_text(report, encoding="utf-8")
         (REPORTS / "latest.md").write_text(report, encoding="utf-8")
     print(report)
