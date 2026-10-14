@@ -4,9 +4,13 @@
   {
    "date": "2026-10-12",
    "text": "First edition: 21 funding routes, 8 roles and 12 white-space intersections."
+  },
+  {
+   "date": "2026-10-14",
+   "text": "Automated check: 0 date change(s) applied, 0 item(s) for review, 0 broken link(s)."
   }
  ],
  "checkedBy": "Weekly automated check plus human review (see the repository README)",
- "lastChecked": "2026-10-12",
+ "lastChecked": "2026-10-14",
  "note": "First edition built from research on 11 Oct 2026."
 }
